@@ -67,3 +67,16 @@ Next, I have flood analysis, as it’s a lesser-known event in comparison to tor
 **Question 2: Which states were most affected by flooding in 2020?**
 ![States Most Flooded](images/states_most_flooded.png)
 
+### Tornado Analysis
+
+Finally, I have a deep dive into tornadoes, as there were 932 instances of them in 2020. Mississippi had the highest number of tornadoes in 2020, with Texas closely behind. Additionally, I measured tornadoes based on the EF scale, with EF0 being the weakest and EF4 being the most violent. There were 361 EF-0 tornadoes in 2020 and 10 EF-4s. 
+
+**Question 1: Which states had the most tornadoes in 2020?**
+![Tornadoes by State](images/tornadoes_by_state.png)
+
+**Question 2: What was the distribution of tornadoes on the F-Scale?**
+![Tornado F-Scale](images/tornado_fscale.png)
+
+## Why does this Data Matter?
+
+I found these results interesting, as I grew up occasionally having to don a bike helmet and sit in an interior closet when storms got violent or when we were in tornado warnings. I care about these findings as these storm events are getting stronger due to climate change, and anyone who views this data can see this. Residents in high-risk areas such as Tornado Alley, insurance companies, and meteorologists should care about these results, as these events are becoming more regular, resulting in greater damage and loss of lives. This data serves as a reminder that having an emergency plan in place is important, but that practicing that plan can save lives. 
