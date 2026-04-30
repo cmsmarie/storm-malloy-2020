@@ -56,3 +56,14 @@ In terms of economic damage, I measured the states with the highest property dam
 
 **Question 2: What was the single most destructive storm event in terms of property damage?**
 ![Most Destructive Single Event](images/most_destructive_single_event.png)
+
+### Flood Analysis
+
+Next, I have flood analysis, as it’s a lesser-known event in comparison to tornadoes, but it can be just as destructive. First, I have the most common flood causes with heavy rain at 3,877, followed by snow melt at 147, and an ice jam at 16. The states that had the most instances of flood-inflicted property damage were Missouri, Illinois, and Kentucky. 
+
+**Question 1: What are the main causes of floods in 2020?**
+![Flood Causes](images/flood_causes.png)
+
+**Question 2: Which states were most affected by flooding in 2020?**
+![States Most Flooded](images/states_most_flooded.png)
+
