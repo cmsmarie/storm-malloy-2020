@@ -36,3 +36,13 @@ The next section is geography, in which the overall question is to analyze where
 
 **Question 5: How many storm events, total deaths, and property damage were there in Oklahoma counties in 2020?**
 ![Oklahoma](images/oklahoma.png)
+
+### Human Impact
+
+Moving on to the section on human impact, I wanted to measure the direct vs indirect injuries by storm type and the deadliest single storm event. Direct injuries occur during the impact of the event, while indirect injuries occur before or after the event, such as falls and lacerations. Tornadoes caused the most direct and indirect injuries, which I wasn’t surprised by. The deadliest single storm event was caused by an EF-4 tornado in Putnam County, Tennessee, and led to the deaths of 19 people. 
+
+**Question 1: Which storm type caused the most direct vs indirect injuries?**
+![Injuries](images/injuries.png)
+
+**Question 2: What was the deadliest single storm event in 2020?**
+![Deadliest Event](images/deadliest_event.png)
