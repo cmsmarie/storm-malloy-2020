@@ -18,4 +18,21 @@ To start, this section will analyze storm types based on the idea of frequency v
 **Question 3: What are the deadliest storm events?**
 ![Storm Types Death](images/storm_types_death.png)
 
+### Geography
 
+The next section is geography, in which the overall question is to analyze where storms hit the hardest, with a further analysis on Texas, Oklahoma, and Kansas, as they’re part of Tornado Alley. The first graph shows the states with the most storm events, led by Texas at 2,843, followed by South Dakota at 1,544 and Kansas at 1,308. The next question focuses on the number of event types by state. For example, Alabama has had 806 instances of thunderstorm wind, while Arizona has had three instances of dust devils. I conducted a deeper analysis of counties in Texas, Oklahoma, and Kansas by examining event counts, total direct deaths, and total property damage, as I often spend time driving between these three states. 
+ 
+**Question 1: Which states had the most storm events in 2020?**
+![States Most Event](images/states_most_event.png)
+
+**Question 2: How many different event types occurred in each state?**
+![States and Events](images/states_and_events.png)
+
+**Question 3: How many storm events, total deaths, and property damage were there in Texas counties in 2020?**
+![Texas](images/texas.png)
+
+**Question 4: How many storm events, total deaths, and property damage were there in Kansas counties in 2020?**
+![Kansas](images/kansas.png)
+
+**Question 5: How many storm events, total deaths, and property damage were there in Oklahoma counties in 2020?**
+![Oklahoma](images/oklahoma.png)
