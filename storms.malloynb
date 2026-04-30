@@ -1,0 +1,161 @@
+>>>malloy
+import "storms.malloy"
+>>>markdown
+# 2020 US Storm Events Analysis
+I chose to analyze storm events as weather has always fascinated due to my experience growing up in Central Texas. The dataset is from Kaggle and entails NOAA Storm data from 2020, which was a year for powerful storms in the midst of COVID-19. In this notebook, the types of storms, whether geography plays a factor or not, human impact, and economic damage will be examined. Additionally, there is a deeper look at floods and tornadoes due to the damage that these particular storms can have.
+>>>markdown
+## Storm Types: Frequency vs Danger
+The most frequent storm type is thunderstorm wind at 14,461, but it wasn't the most destructive. Read on to learn what the most destructive was in terms of property damage and deaths. 
+>>>malloy
+
+#Stormtypes - Top 10 most frequent storm types
+run: storms -> {
+  group_by: event_type
+  aggregate: event_count
+  order_by: event_count desc
+  limit: 10
+}
+>>>malloy
+#Most property damage by storm type
+run: storms -> {
+  group_by: event_type
+  aggregate: total_damage_property
+  order_by: total_damage_property desc
+  limit: 10
+}
+>>>malloy
+#Deadliest storm types
+run: storms -> {
+  group_by: event_type
+  aggregate: total_deaths_direct
+  order_by: total_deaths_direct desc
+  limit: 10
+}
+>>>markdown
+## Geography: Where did Storms Hit the Hardest?
+Some states bore most of the storm events of 2020. Read on to figure out who and to see further analysis of storms in Texas, Oklahoma, and Kansas, who are often nicknamed Tornado Alley.
+>>>malloy
+#Geography - states with most storm events
+# bar_chart
+run: storms -> {
+  group_by: state
+  aggregate: event_count
+  order_by: event_count desc
+  limit: 15
+}
+>>>malloy
+#Which storm type dominates each region?
+run: storms -> {
+  group_by: state, event_type
+  aggregate: event_count
+  order_by: state asc, event_count desc
+  limit: 50
+}
+>>>malloy
+#Texas county storm breakdown
+run: storms -> {
+  where: state = 'Texas'
+  group_by: cz_name
+  aggregate: event_count, total_deaths_direct, total_damage_property
+  order_by: event_count desc
+  limit: 20
+}
+>>>malloy
+#Kansas county storm breakdown
+run: storms -> {
+  where: state = 'Kansas'
+  group_by: cz_name
+  aggregate: event_count, total_deaths_direct, total_damage_property
+  order_by: event_count desc
+  limit: 20
+}
+>>>malloy
+#Oklahoma county storm breakdown
+run: storms -> {
+  where: state = 'Oklahoma'
+  group_by: cz_name
+  aggregate: event_count, total_deaths_direct, total_damage_property
+  order_by: event_count desc
+  limit: 20
+}
+>>>markdown
+## Human Impact: Which Storms Hurt People the Most?
+In this section, I looked at which storm type caused the most direct and indirect injuries and which single storm event was the deadliest. Direct injuries occur during the impact of a storm, while indirect injuries occur either before or after the impact of the storm.
+>>>malloy
+#Human Impact - direct vs indirect injuries by storm type
+run: storms -> {
+  group_by: event_type
+  aggregate: total_injuries_direct, total_injuries_indirect
+  order_by: total_injuries_direct desc
+  limit: 10
+}
+>>>malloy
+#Deadliest single storm event
+run: storms -> {
+  group_by: event_type, state, cz_name, event_begin_time
+  aggregate: total_deaths_direct
+  order_by: total_deaths_direct desc
+  limit: 10
+}
+>>>markdown
+## Economic Damage: The Cost of the 2020 Storms
+This section talks about the states with the highest overall property damage and the single storm event that left the most economic destruction.
+>>>malloy
+#Economic Damage - States with highest property damage
+run: storms -> {
+  group_by: state
+  aggregate: total_damage_property
+  order_by: total_damage_property desc
+  limit: 15
+}
+>>>malloy
+#Single most destructive events
+run: storms -> {
+  group_by: event_type, state, cz_name, event_begin_time
+  aggregate: total_damage_property
+  order_by: total_damage_property desc
+  limit: 10
+}
+>>>markdown
+## Flood Analysis
+People tend to think tornadoes cause the most damage, however, floods cause a great deal of damage as they're typically more frequent. Read on to learn about the different causes of flooding. 
+>>>malloy
+#Flood Analysis - most commmon flood causes
+run: storms -> {
+  where: event_type ~ r'flood'
+  group_by: flood_cause
+  aggregate: event_count
+  order_by: event_count desc
+}
+>>>malloy
+#States flooded most frequently
+run: storms -> {
+  where: event_type ~ r'flood'
+  group_by: state
+  aggregate: event_count, total_damage_property
+  order_by: event_count desc
+  limit: 15
+}
+>>>markdown
+## Tornado Analysis
+There were 923 tornadoes in 2020. This section reveals the states with the most tornadoes and the intensity of these storms on the F-scale. 
+>>>malloy
+#Tornado Analysis
+#States with the most tornadoes
+run: storms -> {
+  where: event_type = 'tornado'
+  group_by: state
+  aggregate: event_count, total_deaths_direct
+  order_by: event_count desc
+}
+>>>malloy
+#Tornado Analysis by F-Scale
+# bar_chart
+run: storms -> {
+  where: event_type = 'tornado'
+  group_by: tor_f_scale
+  aggregate: event_count, total_deaths_direct
+  order_by: event_count desc
+}
+>>>markdown
+
