@@ -46,3 +46,13 @@ Moving on to the section on human impact, I wanted to measure the direct vs indi
 
 **Question 2: What was the deadliest single storm event in 2020?**
 ![Deadliest Event](images/deadliest_event.png)
+
+### Economic Damage
+
+In terms of economic damage, I measured the states with the highest property damage and the event with the greatest property damage. Davidson County in Tennessee had the most damage, which I thought was interesting, as the tornado in Putnam County was the deadliest, and I had assumed that it would also have the most property damage.
+
+**Question 1: Which states had the highest property damage in 2020?**
+![Property Damage](images/property_damage)
+
+**Question 2: What was the single most destructive storm event in terms of property damage?**
+![Most Destructive Single Event](images/most_destructive_single_event.png)
