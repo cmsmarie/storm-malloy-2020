@@ -25,7 +25,7 @@ The next section is geography, in which the overall question is to analyze where
 **Question 1: Which states had the most storm events in 2020?**
 ![States Most Event](images/states_most_event.png)
 
-**Question 2: How many different event types occurred in each state?**
+**Question 2: What is the number of event types per state?**
 ![States and Events](images/states_and_events.png)
 
 **Question 3: How many storm events, total deaths, and property damage were there in Texas counties in 2020?**
